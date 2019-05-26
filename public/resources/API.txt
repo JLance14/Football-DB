@@ -1,0 +1,42 @@
+http://api.football-data.org
+
+
+import JQUERY to console:
+
+var jq = document.createElement('script');
+jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js";
+document.getElementsByTagName('head')[0].appendChild(jq);
+
+********************************************
+
+football-data.org
+
+GET TEAMS!!
+
+$.ajax({
+  headers: { 'X-Auth-Token': 'c2dd82a85918494a87717b3b4af9731c' },
+  url: 'http://api.football-data.org/v2/competitions',
+  dataType: 'json',
+  type: 'GET',
+}).done(function(response) {
+  // do something with the response, e.g. isolate the id of a linked resource
+  console.log(response);
+});
+
+**********************************************
+
+KEY : c2dd82a85918494a87717b3b4af9731c
+
+**********************************************
+
+GET PLAYERS!!
+
+$.ajax({
+  headers: { 'X-Auth-Token': 'c2dd82a85918494a87717b3b4af9731c' },
+  url: 'http://api.football-data.org/v2/teams/516',
+  dataType: 'json',
+  type: 'GET',
+}).done(function(response) {
+  // do something with the response, e.g. isolate the id of a linked resource
+  console.log(response);
+});
